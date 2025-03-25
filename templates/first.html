@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        html, body {
+    height: 100%;
+	background-image: url('static/builtin/first.png');
+<!--	background-image: url('static/builtin/pic2.png');-->
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+    z-index: -1;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #ACAEAF;
+  background: linear-gradient(90deg, #6D6E6E 0%, #252525 100%);
+  border: none;
+  border-radius: 1000px;
+  border: 2px solid #898A8B;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  z-index: 1;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #D1D4D8;
+  box-shadow: 0 0 60px #ACAEAF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+    z-index: 1;
+}
+
+.button:hover, .button:focus {
+  color: #848587;
+  transform: translateY(-6px);
+    z-index: 1;
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+    z-index: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #D1D4D8;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+    z-index: 1;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+    z-index: 1;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+    z-index: 1;
+}
+    </style>
+  </head>
+  <body style="background-colour: black;">
+  <form class="wrap" action="/getstarted">
+      <div class="wrap" >
+  <button class="button">get started</button>
+    </div>
+  </form>
+
+  </body>
+</html>

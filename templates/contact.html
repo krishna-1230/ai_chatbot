@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+
+:root {
+  --form-bg: #f8f4e5;
+  --form-border: #f45702;
+  --form-shadow: #dfae4b;
+  --form-focus: #6bd4b1;
+  --font-size: 12pt;
+  --font-face: 'Spartan';
+  --font-color: #2A293E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("static/builtin/contact_thankyou.png") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+<!--  align-items: center;-->
+  justify-items: center;
+  font-size: var(--font-size);
+<!--  font-family: var(&#45;&#45;font-face);-->
+  color: var(--font-color);
+}
+
+.contact-us {
+  background: var(--form-bg);
+  padding: 50px 100px;
+  border-top: 10px solid var(--form-border);
+}
+
+label,
+input,
+textarea {
+  display: block;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  font-size: 20px;
+  line-height: calc(var(--font-size) * 2);
+  font-family: var(--font-face);
+}
+
+input {
+  margin-bottom: calc(var(--font-size) * 2);
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 10pt;
+  line-height: calc(var(--font-size) * 2);
+  font-style: italic;
+  margin: 0 0 .5em 0;
+}
+
+span {
+  font-size: 8pt;
+}
+
+em {
+  color: var(--form-border);
+  font-weight: bold;
+}
+
+input,
+textarea {
+  border: none;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background: white;
+  padding-left: 5px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--form-focus);
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  display: block;
+  float: right;
+  line-height: $font-size * 2;
+  padding: 0 20px;
+  border: 2px solid grey;
+  font-weight: bold;
+  font-size: 14px;
+  background: #ffffff;
+  color: grey;
+  letter-spacing: 2px;
+  transition: .2s all ease-in-out;
+
+  outline: none;
+  border-radius: 6px;
+  height: 45px;
+}
+button:hover {
+  background-color: #919192;
+  border: 2px solid #434344;
+  border-radius: 6px;
+  color: white;
+   letter-spacing: 2px;
+  color: $form-border;
+
+
+}
+::selection {
+  background: rgb(255, 199, 184);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid $form-focus;
+  -webkit-text-fill-color: $font-color;
+  -webkit-box-shadow: 0 0 0px 1000px $form-bg inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+nav {
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1px;
+			height: 36px;
+
+			border-radius:5px;
+		}
+		nav ul {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			list-style: none;
+		}
+		nav li {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		nav a:hover {
+			text-decoration: underline;
+		}
+
+
+    </style>
+
+</head>
+<body>
+    <nav>
+		<a href="#" style="padding-left:10px;">AI chatbot</a>
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/about">About</a></li>
+            <li><a href="/chatbot">AI chatbot</a></li>
+
+		</ul>
+	</nav>
+
+<div style="align-items: center; display: flex; justify-content: center;">
+<form action="/thankyou" method="post" style="padding: 100px; width: 40%;background: rgba(150, 150, 150, 0.3);
+            backdrop-filter: blur(3px);border-radius: 10px;">
+  <label for="customerName">NAME <em>&#x2a;</em></label>
+  <input type="text" id="customerName" name="customerName" required="">
+
+  <label for="customerEmail">EMAIL <em>&#x2a;</em></label>
+  <input type="email" id="customerEmail" name="customerEmail" required="">
+
+  <label for="customerPhone">PHONE</label>
+  <input type="tel" id="customerPhone" name="customerPhone">
+
+  <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
+  <textarea rows="4" id="customerNote" name="customerNote" required=""></textarea>
+
+  <h3 style="color:white; font-weight:bold;">Please provide all the information about your issue you can.</h3>
+
+  <button id="customerOrder" type="submit">SUBMIT</button>
+</form>
+</div>
+
+</body>
+</html>

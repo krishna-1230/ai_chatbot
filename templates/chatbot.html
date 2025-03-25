@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <div class="" style="">
+    <div class="flex justify-between">
+      <h1 class="text-4xl text-left px-8 text-gray-500 font-bold" style="font-size: 45px; margin-left: 26%;text-align: justify;color: #FFFFFF; ">Chatbot Assistant</h1>
+
+    </div>
+
+    <div class="flex" style=" margin-left:25%; margin-right:25%;">
+
+        <div class="mx-12 border rounded-lg h-full w-full" id="section" style="background: rgba(150, 150, 150, 0.1);
+            backdrop-filter: blur(5px);">
+          {% for dict_item in chatlist %}
+            {% for key, value in dict_item.items() %}
+            <div class="p-4 m-2">
+              <h2>
+                {% if key in 'you' %}
+                <div class="flex justify-between" style="">
+                  <div></div>
+                  {% if value not in '' %}
+                  <div class="bg-gray-500 text-white p-3 rounded-lg" style="width:70%; border: 0px solid white;text-align: justify; margin-left: 180px; border-radius: 5px; color: white;padding:5px; padding-right: 20px; background-color: #936150; font-size:20px;">{{value}}</div>
+                  {% endif %}
+                </div>
+
+                {% else %}
+                <div class="flex justify-between">
+                  <div class="bg-blue-500 text-white p-3 rounded-lg" style="width:70%; border: 0px solid white; margin-left: 10px; border-radius: 5px; color: white; text-align: justify;padding: 5px; padding-right: 20px; background-color: #4D4D4E; font-size:20px;">{{value}}</div>
+                  <div></div>
+                </div>
+                {% endif %}
+
+              </h2>
+            </div>
+
+            {% endfor %}
+          {% endfor %}
+
+          <div class="p-4">
+            <h2>
+            <form action = "http://localhost:5000/chatbot" method = "POST" >
+              <div class="flex w-full">
+                <input class="border rounded-md p-2 w-full border-blue-500" type = "text" placeholder="Write something..." name = "user_input" style="width:85%;margin-left: 10px;"/>
+                <input class="border rounded-md p-2 font-bold mx-2 bg-blue-500 hover:bg-green-500 text-white" id="submit" type = "submit" value = "Send" style="border: 2px solid white; background: rgba(150, 150, 150, 0.1);
+            backdrop-filter: blur(5px);"/>
+
+              </div>
+
+            </form>
+              <div class="flex w-full" style="margin: 0 45%; padding-top:5%">
+                <form action = "/chat_clear" method = "POST" >
+                <input class="border rounded-md p-2 font-bold mx-2 bg-blue-500 hover:bg-green-500 text-white" id="clear" type = "submit" value = "clear" style="border: 2px solid white; padding: 8px 30px;background: rgba(150, 150, 150, 0.1);
+            backdrop-filter: blur(5px);"/>
+                </form>
+              </div>
+
+            </h2>
+          </div>
+        </div>
+  </div>
+  </div>
+{% endblock %}

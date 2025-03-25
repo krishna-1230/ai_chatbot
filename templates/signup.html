@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-in</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: black;
+			background-image: url('static/builtin/third_a.png');
+			display: flex;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 2560px;
+		}
+
+		.container {
+		  border: 4px solid #ffffff;
+		  border-radius: 7px;
+		  background-color: transparent;
+		  max-width: 350px;
+		  margin: 0 auto;
+		  padding: 20px;
+		  border-radius: 5px;
+		  box-shadow: 0 0 10px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,1);
+		  margin-top: 100px;
+		}
+
+		h1 {
+			margin: 0 0 20px;
+			text-align: center;
+			font-weight: bold;
+			color: white;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		    color: white;
+		    font-family: Arial, sans-serif;
+		}
+
+		input[type="text"],
+		input[type="password"],
+		 input[type="email"]{
+			width: 100%;
+			height: 25px;
+			padding-up: 0px;
+			padding-down: 0px;
+			border: none;
+			margin-right: 20px;
+			padding-right: 0px;
+			border-radius: 6px;
+			margin-bottom: 20px;
+		}
+
+			input[type="submit"] {
+			  background-color: #02399e;
+			  border: 2px solid white;
+			  padding: 7px 24px;
+			  color: white;
+			  cursor: pointer;
+			  transition: all 0.3s ease;
+			  width: 100%;
+			  border-radius: 7px;
+			  font-weight: bold;
+			}
+
+			input[type="submit"]:hover {
+			  background-color: #ffffff;
+			  color: #02399e;
+			  color: black;
+
+			}
+	</style>
+</head>
+<body>
+	<div class="container" >
+		<h1>Signup</h1>
+		<form action="/signup_name_pass" method="post">
+			<label for="username"><strong>email:</strong></label>
+			<input type="email" id="customerEmail" name="customerEmail" required placeholder="email">
+			<label for="username"><strong>Username:</strong></label>
+			<input type="text" id="username" name="username" required placeholder="username">
+			<label for="password"><strong>Password:</strong></label>
+			<input type="password" id="password" name="password" required placeholder="password">
+			<input type="submit" value="Sign-in" style=" font-size: 20px;">
+		</form>
+
+	</div>
+</body>
+</html>
