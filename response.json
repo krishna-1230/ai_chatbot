@@ -19,6 +19,14 @@
         {
             "you": "asdf",
             "response": "welcome."
+        },
+        {
+            "you": "yo",
+            "response": "welcome."
+        },
+        {
+            "you": "what is RAID",
+            "response": "RAID is a data storage virtualization technology that combines multiple physical disk drive components into one or more logical units for the purposes of data redundancy, performance improvement, or both."
         }
     ]
 }
